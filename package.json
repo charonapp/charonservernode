@@ -1,0 +1,17 @@
+{
+  "name": "charonservernode",
+  "version": "1.0.0",
+  "description": "a couple of utility functions for making API requests to Charon, can also work as express middleware.",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "keywords": [
+    "charon",
+    "node",
+    "server"
+  ],
+  "author": "Charon",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
