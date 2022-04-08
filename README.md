@@ -11,7 +11,7 @@ This SDK can be used client side, however it is strongly discouraged to do so do
 2. Create a new instance of the CharonServer with the APIKey
 3. Use the different functions supported by the API
 
-#### Express setup using the pre-built endpoints (for easy use with any CharonClient SDKs)
+### Express setup using the pre-built endpoints (for easy use with any CharonClient SDKs)
 ```javascript
     var app = express();
     var charonServer = new CharonAPIEndpoints("API TOKEN HERE");
@@ -20,16 +20,19 @@ This SDK can be used client side, however it is strongly discouraged to do so do
 
     //endpoint for creating a new user
     app.post('/api/v1/charon/create',charonServer.createUserEndpoint);
+
     //endpoint for getting all pending device sign ins for a particular user
     app.post('/api/v1/charon/pending',charonServer.getPendingAuthDevicesEndpoint);
+
     //endpoint for requesting a login to an account from a device
     app.post('/api/v1/charon/login',charonServer.requestLoginEndpoint);
+    
     //endpoint for authenticate a pending login request
     app.post('/api/v1/charon/authenticate',charonServer.authenticatePendingEndpoint);
 
     app.listen(8080);
 ```
-#### Using the verifyAccount middleware for any endpoints that require authentication to use (such as creating a post)
+### Using the verifyAccount middleware for any endpoints that require authentication to use (such as creating a post)
 
 ```javascript
     var app = express();
@@ -41,8 +44,6 @@ This SDK can be used client side, however it is strongly discouraged to do so do
     app.post('/post/create',charonServer.verifyAccountMiddleware,async function(req,res,next){
         if(req.charon.auth == true){
         //write your own post logic here:
-
-
         //EXAMPLE
         PostHandler.createPost(req.charon.username,{'test':req.body.test});
 
