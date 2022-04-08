@@ -4,6 +4,10 @@
   "description": "a couple of utility functions for making API requests to Charon, can also work as express middleware.",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
+  "repository": {
+    "url": "https://github.com/charonapp/charonservernode.git",
+    "type": "git"
+  },
   "keywords": [
     "charon",
     "node",
